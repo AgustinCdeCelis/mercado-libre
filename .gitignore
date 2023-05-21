@@ -3,3 +3,5 @@ ent_venv/
 
 *.pyc
 __pycache__/
+
+app/

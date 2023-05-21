@@ -3,12 +3,13 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome.options import Options
 import requests
 from bs4 import BeautifulSoup
 import re
 from selenium.webdriver.common.by import By
 import time
-import numpy as np
+
 import pandas as pd
 import openpyxl
 
@@ -29,8 +30,14 @@ def take_data(info):
 
     s= Service(PATH)
     
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')  # Habilitar el modo sin cabeza
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
 
-    driver = webdriver.Chrome(service=s)
+    # Crear una instancia del controlador de Chrome con las opciones configuradas
+    driver = webdriver.Chrome(options=chrome_options,service=s)
+    
     driver.set_window_size(1366,768)
 
     driver.get(link)
