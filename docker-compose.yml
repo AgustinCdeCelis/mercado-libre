@@ -4,3 +4,4 @@ services:
     image: meli
     volumes:
       - ./data:/app/data
+

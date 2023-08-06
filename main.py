@@ -1,11 +1,11 @@
 from model import model_meli
 import pandas as pd
-from import_data import extraccion
+from import_data import extraccion1
 
-print(extraccion.string)
+print(extraccion1.string)
 
 
-lista =extraccion.string.split()
+lista =extraccion1.string.split()
 
 
 
@@ -21,7 +21,7 @@ for i in lista:
 
 df = pd.DataFrame({'meli':lista,'category_id':full})
    
-df.to_excel('./data/meliprueba1.xlsx',index= False)
+df.to_excel('./data/meliprueba2.xlsx',index= False)
 
 
 
